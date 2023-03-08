@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "post_keeper_db"
+      POSTGRES_USER: "post_keeper_user"
+      POSTGRES_PASSWORD: "post_keeper_pass"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8181:8080"
