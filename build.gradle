@@ -14,21 +14,22 @@ repositories {
 }
 
 dependencies {
-	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
-	implementation group: 'org.projectlombok', name: 'lombok-mapstruct-binding', version: '0.2.0'
-	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.3.Final'
-	implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.liquibase:liquibase-core'
+	compileOnly 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
+	implementation group: 'org.projectlombok', name: 'lombok-mapstruct-binding', version: '0.2.0'
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.3.Final'
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.5.4'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.2'
-	implementation group: 'org.hibernate', name: 'hibernate', version: '8.0.0.Final'
 	implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.0.Final'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testCompileOnly 'org.projectlombok:lombok:1.18.26'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
