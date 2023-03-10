@@ -1,6 +1,6 @@
 package com.example.post_keeper.app.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 

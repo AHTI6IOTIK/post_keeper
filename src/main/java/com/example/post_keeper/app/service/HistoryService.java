@@ -5,8 +5,8 @@ import com.example.post_keeper.app.exception.EntityNotFoundException;
 import com.example.post_keeper.app.repository.HistoryRepository;
 import com.example.post_keeper.app.repository.HistoryTypeRepository;
 import com.example.post_keeper.app.repository.PostOfficeRepository;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 

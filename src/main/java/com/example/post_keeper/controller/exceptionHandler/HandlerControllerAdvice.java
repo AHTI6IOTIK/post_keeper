@@ -3,7 +3,7 @@ package com.example.post_keeper.controller.exceptionHandler;
 import com.example.post_keeper.app.dto.DescriptionResponse;
 import com.example.post_keeper.app.dto.Violation;
 import com.example.post_keeper.app.exception.BadRequestException;
-import jakarta.validation.ConstraintViolationException;
+import javax.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

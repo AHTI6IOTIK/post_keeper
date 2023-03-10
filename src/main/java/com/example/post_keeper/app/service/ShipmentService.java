@@ -59,7 +59,7 @@ public class ShipmentService {
 
     public ShipmentStatusDto getShipmentHistory(Long shipmentId) {
 
-        var shipment = shipmentRepository.findById(shipmentId).orElseThrow(RuntimeException::new);
+        var shipment = shipmentRepository.findById(shipmentId).orElseThrow(() -> new EntityNotFoundException("shipment history", shipmentId));
         var history = historyService.findHistoryByShipment(shipmentId);
         return shipmentMapper.toShipmentStatusDto(shipment, history);
     }
