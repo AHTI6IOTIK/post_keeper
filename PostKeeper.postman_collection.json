@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "47098980-2b6c-4ed9-8019-b0dd0e532481",
+		"name": "PostKeeper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4477689"
+	},
+	"item": [
+		{
+			"name": "shipment",
+			"item": [
+				{
+					"name": "type",
+					"item": [
+						{
+							"name": "Create shipment types",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"name\": \"письмо\"\n    },\n    {\n        \"name\": \"посылка\"\n    },\n    {\n        \"name\": \"бандероль\"\n    },\n    {\n        \"name\": \"открытка\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/shipment/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"shipment",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update shipment types",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": 1,\n        \"name\": \"письмо\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"посылка\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"бандероль\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"открытка\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/shipment/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"shipment",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get shipment types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/shipment/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"shipment",
+										"type"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Registration shipment package",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postOffice\": 1,\n    \"historyType\": 1,\n    \"shipmentType\": 4,\n    \"recipientZipcode\": 1,\n    \"recipientAddress\": \"Pochta mochta\",\n    \"recipientName\": \"Resipient Recipient\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/shipment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"shipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get shipment history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/shipment/history/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"shipment",
+								"history",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move shipment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shipmentId\": 1,\n    \"historyType\": 10,\n    \"postOffice\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/shipment/move",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"shipment",
+								"move"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post_office",
+			"item": [
+				{
+					"name": "Get all post offices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/post_office",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post_office"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create post offices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"zipcode\": 1,\n        \"name\": \"Post office 1\",\n        \"address\": \"Post sun street 743\"\n    },\n    {\n        \"zipcode\": 2,\n        \"name\": \"Post office 2\",\n        \"address\": \"Post sun street 744\"\n    },\n    {\n        \"zipcode\": 3,\n        \"name\": \"Post office 3\",\n        \"address\": \"Post sun street 745\"\n    },\n    {\n        \"zipcode\": 4,\n        \"name\": \"Post office 4\",\n        \"address\": \"Post sun street 746\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/post_office",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post_office"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update post offices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": 1,\n        \"zipcode\": 1,\n        \"name\": \"Post office 1\",\n        \"address\": \"Post sun street 743\"\n    },\n    {\n        \"id\": 2,\n        \"zipcode\": 2,\n        \"name\": \"Post office 2\",\n        \"address\": \"Post sun street 744\"\n    },\n    {\n        \"id\": 3,\n        \"zipcode\": 3,\n        \"name\": \"Post office 3\",\n        \"address\": \"Post sun street 745\"\n    },\n    {\n        \"id\": 4,\n        \"zipcode\": 4,\n        \"name\": \"Post office 4\",\n        \"address\": \"sun street Post 746\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/post_office",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post_office"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "history",
+			"item": [
+				{
+					"name": "type",
+					"item": [
+						{
+							"name": "Create history types",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"name\": \"Принято\"\n    },\n    {\n        \"name\": \"Принято в отделении\"\n    },\n    {\n        \"name\": \"Покинуло отделение\"\n    },\n    {\n        \"name\": \"Принято в сортировочном центре\"\n    },\n    {\n        \"name\": \"Покинуло сортировочный центер\"\n    },\n    {\n        \"name\": \"Готово к выдаче\"\n    },\n    {\n        \"name\": \"Выдано\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/history/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"history",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update history types",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": 1,\n        \"name\": \"Принято\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Принято в отделении\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Покинуло отделение\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Принято в сортировочном центре\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Покинуло сортировочный центер\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Готово к выдаче\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Выдано\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/history/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"history",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get history types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/history/type",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"history",
+										"type"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

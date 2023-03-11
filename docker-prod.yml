@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  pk_web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    volumes:
+      - .:/var/www:cached
+    environment:
+      POSTGRES_DSN: "jdbc:postgresql://pk_db:5432/post_keeper_db"
+    ports:
+      - "8080:8080"
+
+  pk_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "post_keeper_db"
+      POSTGRES_USER: "post_keeper_user"
+      POSTGRES_PASSWORD: "post_keeper_pass"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"

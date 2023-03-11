@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - createTable:
+            tableName: history
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: history_type
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: datetime
+                  defaultValue: now
+                  constraints:
+                    nullable: false
+              - column:
+                  name: shipment_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: post_office
+                  type: bigint
+                  constraints:
+                    nullable: false
