@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - createTable:
+            tableName: shipment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: shipment_type
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: recipient_zipcode
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: recipient_address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: recipient_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
